@@ -34,8 +34,17 @@
         "vue-router": "^4.6.3"
     },
     "devDependencies": {
+        "lint-staged": "^16.2.7",
         "nuxt-shiki": "0.3.1",
         "shiki": "^3.17.0",
+        "simple-git-hooks": "^2.13.1",
         "typescript": "^5.9.3"
+    },
+    "simple-git-hooks": {
+        "pre-commit": "npx lint-staged",
+        "commit-msg": "node scripts/verify-commit.js"
+    },
+    "lint-staged": {
+        "*": "eslint --fix"
     }
 }
